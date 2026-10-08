@@ -1,10 +1,10 @@
  const con = require('../db')
 
 const cadastrar = (req, res) => {
-    const { usuarioId, cidade, tipoEvento, temperaturaMaxima, data, nivelImpacto } = req.body
+    const { usuarioId, cidade, tipoEvento, temperaturaMaxima, nivelImpacto } = req.body
     try {
-        const query = 'INSERT INTO evento (usuarioId, cidade, tipoEvento, temperaturaMaxima, data, nivelImpacto) VALUES (?, ?, ?, ?, ?, ?);'
-        con.query(query, [usuarioId, cidade, tipoEvento, temperaturaMaxima, data, nivelImpacto], (err, results) => {
+        const query = 'INSERT INTO evento (usuarioId, cidade, tipoEvento, temperaturaMaxima, nivelImpacto) VALUES (?, ?, ?, ?, ?);'
+        con.query(query, [usuarioId, cidade, tipoEvento, temperaturaMaxima, nivelImpacto], (err, results) => {
             if (err) {
                 console.error(err)
                 res.status(500).json({ error: 'Erro ao cadastrar evento' })
@@ -16,7 +16,7 @@ const cadastrar = (req, res) => {
         })
     } catch (error) {
         console.error(error)
-        res.status(400).json({ error: 'Erro ao cadastrar evento', details: 'Informe { usuarioId, cidade, tipoEvento, temperaturaMaxima, data, nivelImpacto }' })
+        res.status(400).json({ error: 'Erro ao cadastrar evento', details: 'Informe { usuarioId, cidade, tipoEvento, temperaturaMaxima, nivelImpacto }' })
     }
 }
 
