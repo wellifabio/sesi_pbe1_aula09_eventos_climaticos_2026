@@ -19,3 +19,9 @@ Projeto para aulas de back-end, com o objetivo de criar uma API RESTful para ger
     - Copie e cole o conteúdo do arquivo `db/script.sql` no shell do MariaDB para criar e popular o banco de dados.
 - 4 Iniciar o servidor com `npm run dev`
 - 5 Testar as rotas da API utilizando o Thunder Client ou Insomnia ou Postman, conforme especificado no arquivo `src/rotes.js`.
+
+## Testes com Thunder Client
+<details><summary>Listar Usuários</summary>![Screeshot01](./docs/testes/screenshot01.png)</details>
+<details><summary>Cadastrar novo usuário</summary>![Screeshot01](./docs/testes/screenshot02.png)</details>
+<details><summary>Listar Eventos</summary>![Screeshot01](./docs/testes/screenshot03.png)</details>
+<details><summary>Cadastrar novo Evento</summary>![Screeshot01](./docs/testes/screenshot04.png)</details>
