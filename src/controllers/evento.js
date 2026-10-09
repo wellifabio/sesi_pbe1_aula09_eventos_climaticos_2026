@@ -3,8 +3,8 @@
 const cadastrar = (req, res) => {
     const { usuarioId, cidade, tipoEvento, temperaturaMaxima, nivelImpacto } = req.body
     try {
-        const query = 'INSERT INTO evento (usuarioId, cidade, tipoEvento, temperaturaMaxima, nivelImpacto) VALUES (?, ?, ?, ?, ?);'
-        con.query(query, [usuarioId, cidade, tipoEvento, temperaturaMaxima, nivelImpacto], (err, results) => {
+        const sql = 'INSERT INTO evento (usuarioId, cidade, tipoEvento, temperaturaMaxima, nivelImpacto) VALUES (?, ?, ?, ?, ?);'
+        con.query(sql, [usuarioId, cidade, tipoEvento, temperaturaMaxima, nivelImpacto], (err, results) => {
             if (err) {
                 console.error(err)
                 res.status(500).json({ error: 'Erro ao cadastrar evento' })
@@ -21,8 +21,8 @@ const cadastrar = (req, res) => {
 }
 
 const listar = (req, res) => {
-    const query = 'SELECT * FROM evento;'
-    con.query(query, (err, results) => {
+    const sql = 'SELECT * FROM evento;'
+    con.query(sql, (err, results) => {
         if (err) {
             console.error(err)
             res.status(500).json({ error: 'Erro ao buscar eventos' })
